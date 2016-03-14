@@ -22,4 +22,16 @@ def valid_date?(month, day, year)
  days_per_month = 0
 
 
+#testing to see if this is a leap_year, which is every 4th year, so divisible by 4 UNLESS it is divisible by 100 but not 400
+def leap_year 
+	if year % 4 == 0 && year % 400 == 0
+		leap_year = true
+	elsif year % 4 == 0 && year % 100 != 0
+		leap_year = true
+	else leap_year = false
+	end
+end
+
+
+
 end

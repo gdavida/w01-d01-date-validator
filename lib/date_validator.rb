@@ -13,8 +13,6 @@
 # + Only worry about integer inputs (no floats, strings, etc.)
 #
 # This method should, in its final form, not do any output.
-require pry
-#use to test in terminal
 
 def valid_date?(month, day, year)
  m_valid = false
@@ -34,7 +32,5 @@ def valid_date?(month, day, year)
 		end
 	end
 
-	binding.pry
-	#breakpoint for testing in terminal
 
 end

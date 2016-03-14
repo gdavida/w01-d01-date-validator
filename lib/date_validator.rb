@@ -32,5 +32,16 @@ def valid_date?(month, day, year)
 		end
 	end
 
+#set the valid number of days per that particular month
+if month == 1 || month == 3 || month == 5 || month == 7 || month == 8 || month == 10 || month == 12
+	days_per_month = 31
+elsif  month == 4 || month == 6 || month == 8 || month == 11
+	days_per_month = 30
+elsif month == 2 && leap_year == true
+	days_per_month == 29
+else days_per_month == 28
+
+
+	
 
 end

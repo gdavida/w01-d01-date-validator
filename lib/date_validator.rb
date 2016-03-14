@@ -15,6 +15,11 @@
 # This method should, in its final form, not do any output.
 
 def valid_date?(month, day, year)
-  #write your method here
-  return true
+ m_valid = false
+ d_valid = false
+ y_valid = false
+ leap_year = false
+ days_per_month = 0
+
+
 end

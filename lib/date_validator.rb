@@ -20,21 +20,20 @@ def valid_date?(month, day, year)
  m_valid = false
  d_valid = false
  y_valid = false
- leap_year = false
+ leap_year_valid = false
  days_per_month = 0
 
 
 	#testing to see if this is a leap_year, which is every 4th year, so divisible by 4 UNLESS it is divisible by 100 but not 400
 	def leap_year 
 		if year % 4 == 0 && year % 400 == 0
-			leap_year = true
+			leap_year_valid = true
 		elsif year % 4 == 0 && year % 100 != 0
-			leap_year = true
-		else leap_year = false
+			leap_year_valid = true
+		else leap_year_valid = false
 		end
-		puts leap_year
 	end
-	
+
 	binding.pry
 	#breakpoint for testing in terminal
 

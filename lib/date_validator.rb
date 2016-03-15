@@ -38,8 +38,14 @@ if month == 1 || month == 3 || month == 5 || month == 7 || month == 8 || month =
 elsif  month == 4 || month == 6 || month == 8 || month == 11
 	days_per_month = 30
 elsif month == 2 && leap_year == true
-	days_per_month == 29
-else days_per_month == 28
+	days_per_month = 29
+else days_per_month = 28
+
+#check if the month is between 1 and 12, inclusive
+if month >= 1 && month <= 12
+	m_valid = true
+else return false
+end
 
 
 	

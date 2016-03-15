@@ -47,7 +47,12 @@ if month >= 1 && month <= 12
 else return false
 end
 
+#check if year is between 1880 and 2280 inclusive
+if year >= 1880 && year <= 2280
+	y_valid = true
+else return false
+end
 
-	
+
 
 end

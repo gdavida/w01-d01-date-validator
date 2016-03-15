@@ -12,6 +12,13 @@
 # + No using the `Date` class (we'll refactor to allow the `Date` class later this week)
 # + Only worry about integer inputs (no floats, strings, etc.)
 #
+
+
+
+
+
+#3-15 should have 4 small methods- date, month, year, leap_year
+
 # This method should, in its final form, not do any output.
 
 def valid_date?(month, day, year)

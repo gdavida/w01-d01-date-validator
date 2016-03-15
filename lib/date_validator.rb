@@ -21,28 +21,12 @@
 
 # This method should, in its final form, not do any output.
 
-def valid_date?(month, day, year)
-    leap_year = nil
-    if year % 4 == 0 && year % 400 == 0
-		leap_year = true
-	elsif year % 4 == 0 && year % 100 != 0
-		leap_year = true
-	else leap_year = false
-    end
-    
-    if day < 1 || day > 31
-        return false
-    elsif month < 1 || month > 12
-        return false
-    elsif year < 1880 || year > 2280
-        return false
-    elsif month == (4 || 6 || 9 || 11) && day > 30
-        return false
-    elsif month == 2 && day > 29
-        return false
-    elsif month == 2 && leap_year == false && day > 28
-        return false
-    else return true
-    end
 
+require "pry"
+
+def is_leap_year_valid?(year)
+  year % 400 == 0 || (year % 4 == 0 && year % 100 != 0)
 end
+
+binding.pry
+

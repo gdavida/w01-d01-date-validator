@@ -53,6 +53,13 @@ if year >= 1880 && year <= 2280
 else return false
 end
 
-
+#check if date is valid
+def check_day(date)
+	if date >= 1 && date <= days_per_month
+		return true
+	else return false
+	end
+end
+	
 
 end

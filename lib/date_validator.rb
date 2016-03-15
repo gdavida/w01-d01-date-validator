@@ -28,5 +28,8 @@ def is_leap_year_valid?(year)
   year % 400 == 0 || (year % 4 == 0 && year % 100 != 0)
 end
 
-binding.pry
+def is_month_valid?(month)
+  month >= 1 && month <= 12
+end
 
+binding.pry

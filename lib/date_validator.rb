@@ -32,4 +32,15 @@ def is_month_valid?(month)
   month >= 1 && month <= 12
 end
 
+
+def is_day_valid?(day, month, leap_year_validity)
+	if month == 2 && leap_year_validity == false && day <=28
+	elsif month == 2 && leap_year_validity == true && day <=29
+
+	elsif month == (4 || 6 || 9 || 11) && day <= 30
+
+	else day >= 1 && day <= 31
+	end
+end
+
 binding.pry

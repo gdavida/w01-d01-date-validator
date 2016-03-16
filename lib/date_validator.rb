@@ -25,7 +25,7 @@
 require "pry"
 
 def is_year_valid?(year)
-  year >= 1880 && year <= 2280
+  year >= 1880 && year <= 2280else
 end
 
 def is_leap_year_valid?(year)
@@ -43,7 +43,6 @@ def is_day_valid?(month, day, leap_year_validity)
 	(month == (1 || 3 || 5 || 7 || 8 || 10 || 12)) && day <= 30
 end
 
-
 def valid_date?(month, day, year)
   month_validity = is_month_valid?(month)
   year_validity = is_year_valid?(year)
@@ -52,4 +51,3 @@ def valid_date?(month, day, year)
   month_validity && day_validity && year_validity
 end
 binding.pry
-

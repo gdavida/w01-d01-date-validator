@@ -22,32 +22,39 @@
 # This method should, in its final form, not do any output.
 
 
-require "pry"
-
 def is_year_valid?(year)
-  year >= 1880 && year <= 2280else
-end
-
-def is_leap_year_valid?(year)
-  year % 400 == 0 || (year % 4 == 0 && year % 100 != 0)
+  year >= 1880 && year <= 2280
 end
 
 def is_month_valid?(month)
   month >= 1 && month <= 12
 end
 
-def is_day_valid?(month, day, leap_year_validity)
-	(day >= 1 && day <= 28) ||
-	(month == 2 && leap_year_validity == true && day <=29) ||
-	(month == (4 || 6 || 9 || 11)) && day <= 30 ||
-	(month == (1 || 3 || 5 || 7 || 8 || 10 || 12)) && day <= 30
+def days_in_february(year)
+  if year % 400 == 0 || (year % 4 == 0 && year % 100 != 0)
+  	29
+  else 28
+  end
+end
+
+def figure_days_in_month(month, year)
+	if month == 2 
+		days_in_february(year)
+	elsif month == (4 || 6 || 9 || 11)
+		30
+	else 31
+	end
+end
+
+def is_day_valid?(day, days_per_month)
+	day >= 1 && day <= days_per_month 
 end
 
 def valid_date?(month, day, year)
   month_validity = is_month_valid?(month)
   year_validity = is_year_valid?(year)
-  day_validity = is_day_valid?(day,month,is_leap_year_valid?(year))
-
+	days_per_month = figure_days_in_month(month, year)
+  day_validity =  is_day_valid?(day, days_per_month)
+	
   month_validity && day_validity && year_validity
 end
-binding.pry

@@ -32,7 +32,6 @@ def is_leap_year_valid?(year)
   year % 400 == 0 || (year % 4 == 0 && year % 100 != 0)
 end
 
-
 def is_month_valid?(month)
   month >= 1 && month <= 12
 end
@@ -44,10 +43,13 @@ def is_day_valid?(month, day, leap_year_validity)
 	(month == (1 || 3 || 5 || 7 || 8 || 10 || 12)) && day <= 30
 end
 
-binding.pry
 
 def valid_date?(month, day, year)
-	if is_month_valid?(month) && is_year_valid?(year) && is_day_valid?(day,month,is_leap_year_valid?(year))
-	else return false
-	end
+  month_validity = is_month_valid?(month)
+  year_validity = is_year_valid?(year)
+  day_validity = is_day_valid?(day,month,is_leap_year_valid?(year))
+
+  month_validity && day_validity && year_validity
 end
+binding.pry
+
